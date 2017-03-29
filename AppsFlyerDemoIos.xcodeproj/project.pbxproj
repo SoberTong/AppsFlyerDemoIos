@@ -15,6 +15,9 @@
 		83F9AF9B1E5579EF00FBE510 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F9AF991E5579EF00FBE510 /* LaunchScreen.storyboard */; };
 		83F9AFA61E5579EF00FBE510 /* AppsFlyerDemoIosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F9AFA51E5579EF00FBE510 /* AppsFlyerDemoIosTests.m */; };
 		83F9AFB11E5579F000FBE510 /* AppsFlyerDemoIosUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F9AFB01E5579F000FBE510 /* AppsFlyerDemoIosUITests.m */; };
+		83F9AFC21E557F8B00FBE510 /* AppsFlyerLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F9AFC11E557F8B00FBE510 /* AppsFlyerLib.framework */; };
+		83F9AFC51E55802E00FBE510 /* Framework in Resources */ = {isa = PBXBuildFile; fileRef = 83F9AFC41E55802E00FBE510 /* Framework */; };
+		83F9AFC71E55A87D00FBE510 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F9AFC61E55A87D00FBE510 /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		83F9AFAC1E5579F000FBE510 /* AppsFlyerDemoIosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppsFlyerDemoIosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F9AFB01E5579F000FBE510 /* AppsFlyerDemoIosUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppsFlyerDemoIosUITests.m; sourceTree = "<group>"; };
 		83F9AFB21E5579F000FBE510 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83F9AFC11E557F8B00FBE510 /* AppsFlyerLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppsFlyerLib.framework; path = AppsFlyerDemoIos/Framework/AppsFlyerLib.framework; sourceTree = "<group>"; };
+		83F9AFC41E55802E00FBE510 /* Framework */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Framework; sourceTree = "<group>"; };
+		83F9AFC61E55A87D00FBE510 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83F9AFC71E55A87D00FBE510 /* AdSupport.framework in Frameworks */,
+				83F9AFC21E557F8B00FBE510 /* AppsFlyerLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +93,7 @@
 				83F9AFA41E5579EF00FBE510 /* AppsFlyerDemoIosTests */,
 				83F9AFAF1E5579F000FBE510 /* AppsFlyerDemoIosUITests */,
 				83F9AF891E5579EF00FBE510 /* Products */,
+				83F9AFBE1E557C7500FBE510 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +110,7 @@
 		83F9AF8A1E5579EF00FBE510 /* AppsFlyerDemoIos */ = {
 			isa = PBXGroup;
 			children = (
+				83F9AFC41E55802E00FBE510 /* Framework */,
 				83F9AF8E1E5579EF00FBE510 /* AppDelegate.h */,
 				83F9AF8F1E5579EF00FBE510 /* AppDelegate.m */,
 				83F9AF911E5579EF00FBE510 /* ViewController.h */,
@@ -138,6 +148,15 @@
 				83F9AFB21E5579F000FBE510 /* Info.plist */,
 			);
 			path = AppsFlyerDemoIosUITests;
+			sourceTree = "<group>";
+		};
+		83F9AFBE1E557C7500FBE510 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83F9AFC61E55A87D00FBE510 /* AdSupport.framework */,
+				83F9AFC11E557F8B00FBE510 /* AppsFlyerLib.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +226,7 @@
 				TargetAttributes = {
 					83F9AF871E5579EF00FBE510 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 534432933N;
 						ProvisioningStyle = Automatic;
 					};
 					83F9AFA01E5579EF00FBE510 = {
@@ -249,6 +269,7 @@
 				83F9AF9B1E5579EF00FBE510 /* LaunchScreen.storyboard in Resources */,
 				83F9AF981E5579EF00FBE510 /* Assets.xcassets in Resources */,
 				83F9AF961E5579EF00FBE510 /* Main.storyboard in Resources */,
+				83F9AFC51E55802E00FBE510 /* Framework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +443,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 534432933N;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AppsFlyerDemoIos",
+					"$(PROJECT_DIR)/AppsFlyerDemoIos/Framework",
+				);
 				INFOPLIST_FILE = AppsFlyerDemoIos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.avidly.AppsFlyerDemoIos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -433,7 +461,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 534432933N;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AppsFlyerDemoIos",
+					"$(PROJECT_DIR)/AppsFlyerDemoIos/Framework",
+				);
 				INFOPLIST_FILE = AppsFlyerDemoIos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.avidly.AppsFlyerDemoIos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -505,6 +540,7 @@
 				83F9AFB71E5579F000FBE510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83F9AFB81E5579F000FBE510 /* Build configuration list for PBXNativeTarget "AppsFlyerDemoIosTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +549,7 @@
 				83F9AFBA1E5579F000FBE510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83F9AFBB1E5579F000FBE510 /* Build configuration list for PBXNativeTarget "AppsFlyerDemoIosUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +558,7 @@
 				83F9AFBD1E5579F000FBE510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

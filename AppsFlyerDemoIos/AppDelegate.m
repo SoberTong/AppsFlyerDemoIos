@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <AppsFlyerLib/AppsFlyerTracker.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [AppsFlyerTracker sharedTracker].appsFlyerDevKey = @"fZvuk792H9hJQKmaTwuXxA";
+    [AppsFlyerTracker sharedTracker].appleAppID = @"1101603305";
     return YES;
 }
 
@@ -40,6 +43,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[AppsFlyerTracker sharedTracker] trackAppLaunch];
 }
 
 
